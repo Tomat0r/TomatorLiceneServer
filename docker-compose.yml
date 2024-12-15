@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    container_name: license_app
+    ports:
+      - "5000:5000"
+    volumes:
+      - app_data:/app/data
+    environment:
+      - FLASK_ENV=development
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+
+volumes:
+  app_data:
